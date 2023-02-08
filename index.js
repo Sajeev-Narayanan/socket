@@ -1,8 +1,10 @@
-
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 // SparklingStories
 const io = require("socket.io")(8800, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: process.env.app,
     },
 });
 
